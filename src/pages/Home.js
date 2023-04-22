@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/actionGames";
@@ -10,7 +10,6 @@ import GameDetail from '../components/GameDetail';
 
 const Home =() =>{
     const dispatch = useDispatch();
-
     useEffect(()=>{
         dispatch(loadGames())
     },[dispatch])
@@ -22,7 +21,7 @@ const Home =() =>{
         <GamesList>
             <GameDetail/>
             <h2>Popular games</h2>
-            <Games>
+            <Games >
                 {popular.map(game=>(
                     <Game name={game.name} 
                     released={game.released}
