@@ -5,6 +5,8 @@ import { loadGames } from "../actions/actionGames";
 import Game from '../components/Game';
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import GameDetail from '../components/GameDetail';
+
 
 const Home =() =>{
     const dispatch = useDispatch();
@@ -18,6 +20,7 @@ const Home =() =>{
 
     return(
         <GamesList>
+            <GameDetail/>
             <h2>Popular games</h2>
             <Games>
                 {popular.map(game=>(
