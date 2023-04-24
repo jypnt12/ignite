@@ -8,7 +8,7 @@ import { SmallImage } from '../util'
 
 const Game = ({name, released, image, id,}) => {
 
-  
+  const stringPathId = id.toString()
 
   const dispatch = useDispatch()
   const loadDetailHandler = ()=>{
@@ -17,11 +17,11 @@ const Game = ({name, released, image, id,}) => {
     
   }
   return (
-    <StyledGame onClick={loadDetailHandler}>
+    <StyledGame layoutId={stringPathId} onClick={loadDetailHandler}>
         <Link to={`/game/${id}`}>
           <h3>{name}</h3>
           <p>{released} </p>
-          <img src={SmallImage(image, 640)} alt={name} />
+          <motion.img layoutId={`image ${stringPathId}`} src={SmallImage(image, 640)} alt={name} />
         </Link>  
     </StyledGame>
   )
