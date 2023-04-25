@@ -5,6 +5,13 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { SmallImage } from '../util'
 
+import playstation from '../img/playstation.svg'
+import steam from '../img/steam.svg'
+import xbox from '../img/xbox.svg'
+import nintendo from '../img/nintendo.svg'
+import apple from '../img/apple.svg'
+import gamepad from '../img/gamepad.svg'
+
 const GameDetails = ({pathId}) => {
     const navigate = useNavigate()
     const {screen, game, isLoading} = useSelector((state)=>state.detail)
@@ -13,6 +20,23 @@ const GameDetails = ({pathId}) => {
         if(element.classList.contains('shadow')){
             document.body.style.overflow = 'auto';
             navigate('/')
+        }
+    }
+    //get platfoprm images
+    const getPlatform = (platform) => {
+        switch(platform){
+            case "Playstation 4":
+                return playstation ;
+            case "Xbox One":
+                return xbox;
+            case "PC":
+                return steam;
+            case "Nintendo Switch":
+                return nintendo;
+            case "iOS":
+                return apple;
+            default: 
+                return gamepad
         }
     }
   return (
@@ -29,7 +53,7 @@ const GameDetails = ({pathId}) => {
                             <h3>Platforms</h3>
                             <Platforms>
                             {game.platforms.map((data)=>(
-                                <h3 key={data.platform.id}>{data.platform.name}</h3>
+                                <img alt = {data.platform.name} key={data.platform.id} src={getPlatform(data.platform.name)}></img>
                                 ))}
                             </Platforms>
                         </Info>
@@ -37,9 +61,9 @@ const GameDetails = ({pathId}) => {
                     <Media>
                         <motion.img layoutId={`image ${pathId}`}  src={SmallImage(game.background_image, 1280)} alt="image" />
                     </Media>
-                    <div className="description">
+                    <Description>
                         <p>{game.description_raw}</p>
-                    </div>
+                    </Description>
                     <div className="gallery">
                         {screen.results.map((screen) => 
                             <img src={SmallImage(screen.image, 1280)} key={screen.id} alt='game'/>
@@ -79,6 +103,7 @@ const Detail = styled(motion.div)`
     position: absolute;
     left: 10%;
     color: black;
+    
     img{
         width: 100%;
     }
