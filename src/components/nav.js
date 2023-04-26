@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import logo from '../img/logo.svg'
 import { fetchSearch } from "../actions/actionGames";
 import { useDispatch } from "react-redux";
+import { fadeIn } from "../animation";
 
 const Nav = () =>{
 
@@ -23,14 +24,14 @@ const Nav = () =>{
         dispatch({type: "CLEAR_SEARCHED"})
     }
     return(
-        <StyledNav>
+        <StyledNav variants={fadeIn} initial='hidden' animate='show'>
             <Logo onClick={clearSearched}>
                 <img src={logo} alt="logo"/>
                 <h1>Ignite</h1>
             </Logo>
             <form className="search">
                 <input type="text" onChange={InputHandler} value={textInput}/>
-                <button type="submit" onClick={submitSearch}>Search</button>
+                <button style={{display:'none'}} type="submit" onClick={submitSearch}>Search</button>
             </form>
         </StyledNav>
     )
