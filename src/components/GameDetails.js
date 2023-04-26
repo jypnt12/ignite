@@ -120,7 +120,10 @@ const Detail = styled(motion.div)`
     position: absolute;
     left: 10%;
     color: black;
-    
+    @media only screen and (max-width: 768px) {
+            
+            padding: 2rem ;
+     }
     img{
         width: 100%;
     }
@@ -133,7 +136,13 @@ const Stats= styled(motion.div)`
         width: 2rem;
         height: 2rem;
         display: inline;
+        @media only screen and (max-width: 768px) {
+            width: 1rem;
+        height: 1rem;
+
+     }
     }
+    
 `
 const Info = styled(motion.div)`
     text-align: center;
@@ -143,7 +152,13 @@ const Platforms = styled(motion.div)`
     justify-content: space-evenly;
     img{
         margin-left: 3rem;
+        @media only screen and (max-width: 768px) {
+       
+        margin-left: 1rem;
+
+     }
     }
+    
 `
 const Media = styled(motion.div)`
     margin-top: 5rem;

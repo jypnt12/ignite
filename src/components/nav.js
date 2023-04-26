@@ -31,7 +31,7 @@ const Nav = () =>{
             </Logo>
             <form className="search">
                 <input type="text" onChange={InputHandler} value={textInput}/>
-                <button style={{display:'none'}} type="submit" onClick={submitSearch}>Search</button>
+                <button type="submit" onClick={submitSearch}>Search</button>
             </form>
         </StyledNav>
     )
@@ -49,7 +49,11 @@ const StyledNav = styled(motion.div)`
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
         border-radius: 20px;
         outline: none;
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+        }
     }
+    
     button{
         font-size: 1rem;
         border: none;
@@ -57,6 +61,13 @@ const StyledNav = styled(motion.div)`
         cursor: pointer;
         background: #ff7676;
         color: white ;
+        display: none;
+        
+    }
+    @media only screen and (max-width: 768px) {
+            
+            padding: 1rem 2rem;
+            
     }
 `
 const Logo = styled(motion.div)`
@@ -67,6 +78,10 @@ const Logo = styled(motion.div)`
     img{
         height: 2rem;
         width: 2rem;
+    }
+    @media only screen and (max-width: 768px) {
+        align-items: center;
+        padding: 0px;
     }
 `
 export default Nav

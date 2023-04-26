@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
         }
         &::-webkit-scrollbar-track{
         background: white;
-    }
+        }
     }
     body{
         font-family: 'Montserrat', sans-serif;
@@ -26,16 +26,26 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Abril Fatface', cursive;
         font-weight: lighter;
         color: #333;
+        @media only screen and (max-width: 768px) {
+            font-size: 2rem;
+       
+     }
     }
     h3{
         font-size: 1.3rem;
         color: #333;
         padding: 1.5rem 0rem;
+        @media only screen and (max-width: 768px) {
+            font-size: 1rem;
+     }
     }
     p{
         font-size: 1.2rem;
         line-height: 200%;
         color: #696969;
+        @media only screen and (max-width: 768px) {
+        font-size: .8rem;
+        }
     }
     a{
         text-decoration: none;
