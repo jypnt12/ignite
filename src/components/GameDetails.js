@@ -105,7 +105,7 @@ const CardShadow = styled(motion.div)`
         width: 0.5rem;
     }
     &::-webkit-scrollbar-thumb{
-        background-color: #ff7676;
+        background-color: #220101;
     }
     &::-webkit-scrollbar-track{
        background: white;
@@ -116,7 +116,7 @@ const Detail = styled(motion.div)`
     width: 80%;
     border-radius: 1rem;
     padding: 2rem 5rem;
-    background: white;
+    background: #1f1f1f;
     position: absolute;
     left: 10%;
     color: black;
@@ -138,9 +138,8 @@ const Stats= styled(motion.div)`
         display: inline;
         @media only screen and (max-width: 768px) {
             width: 1rem;
-        height: 1rem;
-
-     }
+            height: 1rem;
+        }
     }
     
 `

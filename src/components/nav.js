@@ -46,7 +46,7 @@ const StyledNav = styled(motion.div)`
         padding: 0.5rem;
         border: none;
         margin-top: 1rem;
-        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 30px rgb(255, 255, 255);
         border-radius: 20px;
         outline: none;
         @media only screen and (max-width: 768px) {
@@ -59,7 +59,7 @@ const StyledNav = styled(motion.div)`
         border: none;
         padding:0.5rem 2rem;
         cursor: pointer;
-        background: #ff7676;
+        background: #000000;
         color: white ;
         display: none;
         
@@ -78,7 +78,9 @@ const Logo = styled(motion.div)`
     img{
         height: 2rem;
         width: 2rem;
+     
     }
+    
     @media only screen and (max-width: 768px) {
         align-items: center;
         padding: 0px;
