@@ -40,6 +40,13 @@ export const newGamesURL = () => `${base_url}${newGames}`
 export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}?key=${process.env.REACT_APP_RAWG_API}`
 export const gameScreenshotURL = (game_id) => `${base_url}games/${game_id}/screenshots?key=${process.env.REACT_APP_RAWG_API}`
 
+export const searchGameURL = (game_name) => `${base_url}games?key=${process.env.REACT_APP_RAWG_API}&search=${game_name}&page_size=10`;
+
+
+
+
+
+
 // GET https://api.rawg.io/api/platforms?key=YOUR_API_KEY
 // GET https://api.rawg.io/api/games?key=fef58c3fa96b4523b08cd03c6f851735&dates=2019-09-01,2019-09-30&platforms=18,1,7
 //https://api/rawg.io/api/games?key=undefined&dates=2022-04-21,2023-04-21$ordering=-rating&page_size=10
